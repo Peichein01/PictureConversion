@@ -17,6 +17,9 @@ import sun.misc.BASE64Encoder;
 public class MainC {
 
 	public static void main(String[] args) {
+		/*
+		 * 在这里设置你想要的图片的像素和格式
+		 */
 		int height = 900, width = 900;
 		String type = "jpg";
 		(new PictureConversion(width, height, type)).convertPicture();
