@@ -6,6 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Date;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
@@ -16,6 +17,7 @@ public class PictureConversion {
 	private int width;
 	private int height;
 	private String format;
+	private String destination;
 	/*set default pixel as 50*50
 	 * default format is jpg
 	 */
@@ -24,10 +26,11 @@ public class PictureConversion {
 		this.height = 50;
 		this.format = "jpg";
 	}
-	public PictureConversion(int w, int h, String format) {
+	public PictureConversion(int w, int h, String format, String destination) {
 		this.width = w;
 		this.height = h;
 		this.format = format;
+		this.destination = destination;
 	}
 	public void setPixel(int w, int h) {
 		this.width = w;
@@ -72,9 +75,10 @@ public class PictureConversion {
 				String imageStr =   encoder.encode(imgeBuf);
 				System.out.println("转换完成");
 				
-				
+				Date date = new Date();
+				String fileName = String.valueOf(date.getTime());
 				//-----------------------------------------
-				FileOutputStream fos = new FileOutputStream("C:\\Users\\12290\\Desktop\\temp." + format);//转换得到的图片放到桌面
+				FileOutputStream fos = new FileOutputStream(destination + "\\"+ fileName + "." + format);//转换得到的图片放到桌面
 				ImageIO.write(targetImage, format, fos);
 				fos.close();
 				bos.close();

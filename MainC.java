@@ -18,10 +18,11 @@ public class MainC {
 
 	public static void main(String[] args) {
 		/*
-		 * åœ¨è¿™é‡Œè®¾ç½®ä½ æƒ³è¦çš„å›¾ç‰‡çš„åƒç´ å’Œæ ¼å¼
+		 * ÔÚÕâÀïÉèÖÃÄãÏëÒªµÄÍ¼Æ¬µÄÏñËØºÍ¸ñÊ½
 		 */
-		int height = 900, width = 900;
-		String type = "jpg";
-		(new PictureConversion(width, height, type)).convertPicture();
+		int height = 1200, width = 1800;
+		String format = "png";
+		String destination = "C:\\Users\\12290\\Desktop";
+		(new PictureConversion(width, height, format, destination)).convertPicture();
 	}
 }
